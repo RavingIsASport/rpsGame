@@ -3,6 +3,7 @@ let random = Math.floor(Math.random() * words.length);
 let computerChoice = words[random];
 
 let comChoice = document.querySelector("#comChoice");
+let yourChoice = document.querySelector("#yourChoice");
 let rock = document.querySelector("#rock");
 let paper = document.querySelector("#paper");
 let scissor = document.querySelector("#scissor");
@@ -12,23 +13,23 @@ let playBtn = document.querySelector("#playAgain");
 
 let rock2 = rock.addEventListener("click", (e) => {
   var choice = e.target.value;
-  console.log(e.target.value);
+  console.log(choice);
   game(choice);
 });
 let paper2 = paper.addEventListener("click", (e) => {
   var choice = e.target.value;
-  console.log(e.target.value);
+  console.log(choice);
   game(choice);
 });
 let scissor2 = scissor.addEventListener("click", (e) => {
   var choice = e.target.value;
-  console.log(e.target.value);
   game(choice);
 });
 
 function game(choice) {
   var user = choice;
   comChoice.textContent = computerChoice;
+  yourChoice.textContent = user;
   // tied
   if (user === computerChoice) {
     results.textContent = "Draw";
